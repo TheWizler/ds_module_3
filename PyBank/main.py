@@ -15,7 +15,7 @@ import os
 file_path = 'PyBank/Resources/budget_data.csv'
 
 # Create the Analysis folder if it doesn't exist
-output_folder = 'analysis'
+output_folder = 'PyBank/Analysis'
 os.makedirs(output_folder, exist_ok=True)
 
 # Initialize variables

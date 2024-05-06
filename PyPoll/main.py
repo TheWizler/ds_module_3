@@ -5,7 +5,7 @@ import os
 file_path = 'PyPoll/Resources/election_data.csv'
 
 # Create the Analysis folder if it doesn't exist
-output_folder = 'Analysis'
+output_folder = 'PyPoll/Analysis'
 os.makedirs(output_folder, exist_ok=True)
 
 # Variables
