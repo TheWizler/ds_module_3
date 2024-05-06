@@ -9,9 +9,14 @@
 #The greatest decrease in profits (date and amount) over the entire period
 
 import csv
+import os
 
 # Path to the dataset
 file_path = 'PyBank/Resources/budget_data.csv'
+
+# Create the Analysis folder if it doesn't exist
+output_folder = 'analysis'
+os.makedirs(output_folder, exist_ok=True)
 
 # Initialize variables
 total_months = 0
@@ -21,7 +26,7 @@ changes = []
 greatest_increase = ["", 0]  # Greatest Decrease
 greatest_decrease = ["", 0]  # Greatest Increase
 
-# Open CSV 
+# Open CSV
 with open(file_path, mode='r') as file:
     reader = csv.reader(file)
     header = next(reader)  # Skip the header row
@@ -65,10 +70,12 @@ output = (
     f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})\n"
 )
 
+# Define the output file path within the Analysis folder
+output_file_path = os.path.join(output_folder, 'analysis_output.txt')
+
 # Print to terminal
 print(output)
 
-# Write results to a text file
-output_file_path = 'analysis_output.txt'
+# Write results to the text file in the Analysis folder
 with open(output_file_path, 'w') as output_file:
     output_file.write(output)
